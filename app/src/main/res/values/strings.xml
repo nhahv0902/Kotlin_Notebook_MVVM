@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Kotlin_Notebook_MVVM</string>
+    <string name="main_notebook">Notebook</string>
+    <string name="main_setting">Setting</string>
 </resources>
