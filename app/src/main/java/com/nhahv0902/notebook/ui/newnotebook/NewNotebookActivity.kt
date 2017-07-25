@@ -1,23 +1,24 @@
-package com.nhahv0902.notebook.ui.main
+package com.nhahv0902.notebook.ui.newnotebook
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
+
 import com.nhahv0902.notebook.R
-import com.nhahv0902.notebook.databinding.ActivityMainBinding
+import com.nhahv0902.notebook.databinding.ActivityNewNotebookBinding
 import com.nhahv0902.notebook.ui.BaseActivity
-import com.nhahv0902.notebook.util.Navigator
 
 /**
- * Main UI.
+ * NewNotebook UI.
  */
-class MainActivity : BaseActivity() {
+class NewNotebookActivity : BaseActivity() {
 
-    private var mViewModel: MainViewModel? = null
+    var mViewModel: NewNotebookViewModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mViewModel = MainViewModel(applicationContext, Navigator(this),supportFragmentManager)
-        val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        mViewModel = NewNotebookViewModel()
+        val binding: ActivityNewNotebookBinding = DataBindingUtil.setContentView(this, R.layout.activity_new_notebook)
         binding.viewModel = mViewModel
     }
 
