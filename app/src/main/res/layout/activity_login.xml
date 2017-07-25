@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.nhahv0902.notebook.ui.login.LoginViewModel" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg_login">
+
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="160dp"
+            android:fontFamily="@font/greatvibes_regular"
+            android:gravity="center"
+            android:text="@string/login_welcome_to_app"
+            android:textColor="@color/color_white"
+            android:autoSizeTextType="uniform"
+            android:textSize="70sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <FrameLayout
+            android:onClick="@{() -> viewModel.onFacebookLogin()}"
+            android:id="@+id/frame_facebook"
+            android:layout_width="240dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/bg_login_btn_state"
+            app:layout_constraintBottom_toTopOf="@id/frame_google"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                app:srcCompat="@drawable/ic_facebook" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:text="@string/login_facebook"
+                android:textColor="@color/color_white"
+                android:textSize="20sp" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:onClick="@{() -> viewModel.onGoogleLogin()}"
+            android:id="@+id/frame_google"
+            android:layout_width="240dp"
+            android:layout_height="45dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/bg_login_btn_state"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                app:srcCompat="@drawable/ic_google" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:gravity="center"
+                android:text="@string/login_google"
+                android:textColor="@color/color_white"
+                android:textSize="20sp" />
+        </FrameLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

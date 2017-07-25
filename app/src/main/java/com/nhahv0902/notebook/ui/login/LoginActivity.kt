@@ -1,23 +1,24 @@
-package com.nhahv0902.notebook.ui.main
+package com.nhahv0902.notebook.ui.login
 
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import com.nhahv0902.notebook.R
-import com.nhahv0902.notebook.databinding.ActivityMainBinding
+import com.nhahv0902.notebook.databinding.ActivityLoginBinding
 import com.nhahv0902.notebook.ui.BaseActivity
 import com.nhahv0902.notebook.util.Navigator
 
 /**
- * Main UI.
+ * Login UI.
  */
-class MainActivity : BaseActivity() {
+class LoginActivity : BaseActivity() {
 
-    private var mViewModel: MainViewModel? = null
+    private var mViewModel: LoginViewModel? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mViewModel = MainViewModel(Navigator(this), supportFragmentManager)
-        val binding: ActivityMainBinding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+
+        mViewModel = LoginViewModel(Navigator(this))
+        val binding: ActivityLoginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         binding.viewModel = mViewModel
     }
 

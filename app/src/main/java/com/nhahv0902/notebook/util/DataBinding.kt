@@ -1,8 +1,11 @@
 package com.nhahv0902.notebook.util
 
 import android.databinding.BindingAdapter
+import android.graphics.Typeface
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.view.ViewPager
+import android.support.v4.widget.SwipeRefreshLayout
+import android.widget.TextView
 import com.nhahv0902.notebook.R
 import com.nhahv0902.notebook.ui.main.MainViewModel
 
@@ -49,4 +52,9 @@ fun bottomView(view: BottomNavigationView, viewPager: ViewPager, viewModel: Main
 @BindingAdapter("current_item")
 fun currentItemBottomView(view: BottomNavigationView, currentItem: Int) {
     view.selectedItemId = if (currentItem == 0) R.id.nav_notebook else R.id.nav_setting
+}
+
+@BindingAdapter("refresh")
+fun swipeRefresh(view: SwipeRefreshLayout, isLoading: Boolean) {
+    view.isRefreshing = isLoading
 }

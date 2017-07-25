@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
         android:id="@+id/nav_notebook"
         android:icon="@drawable/ic_notebook"
+        app:showAsAction="ifRoom|withText"
         android:title="@string/main_notebook" />
     <item
         android:id="@+id/nav_new_notebook"
+        app:showAsAction="ifRoom|withText"
         android:title="" />
     <item
         android:id="@+id/nav_setting"
         android:icon="@drawable/ic_setting"
+        app:showAsAction="ifRoom|withText"
         android:title="@string/main_setting" />
 </menu>

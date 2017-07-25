@@ -27,7 +27,7 @@
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
-            android:layout_height="48dp"
+            android:layout_height="wrap_content"
             android:background="?android:attr/windowBackground"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -38,8 +38,8 @@
             bind:view_pager="@{viewpager}">
 
             <android.support.v7.widget.AppCompatImageButton
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_gravity="center"
                 android:background="@drawable/bg_main_item_center_navigation_state"
                 android:onClick="@{() -> viewModel.onStartNewNotebook()}"

@@ -1,6 +1,5 @@
 package com.nhahv0902.notebook.ui.main
 
-import android.content.Context
 import android.databinding.Bindable
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
@@ -17,7 +16,7 @@ import com.nhahv0902.notebook.util.Navigator
  * Exposes the data to be used in the Main screen.
  */
 
-class MainViewModel(val context: Context, val navigator: Navigator, supportFragmentManager: FragmentManager) : BaseViewModel() {
+class MainViewModel(val navigator: Navigator, supportFragmentManager: FragmentManager) : BaseViewModel() {
     val fragments: ArrayList<Fragment> = ArrayList()
 
     var adapter: ViewPagerAdapter
@@ -34,13 +33,7 @@ class MainViewModel(val context: Context, val navigator: Navigator, supportFragm
         adapter = ViewPagerAdapter(fragments, supportFragmentManager)
     }
 
-    override fun onStart() {
 
-    }
-
-    override fun onStop() {
-
-    }
 
     fun onStartNewNotebook() {
         navigator.startActivity<NewNotebookActivity>()

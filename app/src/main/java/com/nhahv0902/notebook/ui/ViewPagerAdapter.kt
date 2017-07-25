@@ -10,9 +10,7 @@ import android.support.v4.app.FragmentPagerAdapter
  */
 
 class ViewPagerAdapter(val fragments: ArrayList<Fragment>, fm: FragmentManager) : FragmentPagerAdapter(fm) {
-    var currentItem: Int = 0
     override fun getItem(position: Int): Fragment {
-        currentItem = position
         return fragments[position]
     }
 
